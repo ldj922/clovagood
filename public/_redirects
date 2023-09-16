@@ -1,0 +1,51 @@
+/* /index.html 200
+
+[/save_store/*]
+to = "https://raittoproject.netlify.app/save_store/:splat"
+status = 301
+force = true
+
+[/place_restaurant/*]
+to = "https://raittoproject.netlify.app/place_restaurant/:splat"
+status = 301
+force = true
+
+[/place_drink_alcohol/*]
+to = "https://raittoproject.netlify.app/place_drink_alcohol/:splat"
+status = 301
+force = true
+
+[/place_drink_caffeine/*]
+to = "https://raittoproject.netlify.app/place_drink_caffeine/:splat"
+status = 301
+force = true
+
+[/place_play_game/*]
+to = "https://raittoproject.netlify.app/place_play_game/:splat"
+status = 301
+force = true
+
+[/place_sing/*]
+to = "https://raittoproject.netlify.app/place_sing/:splat"
+status = 301
+force = true
+
+[/place_exercise/*]
+to = "https://raittoproject.netlify.app/place_exercise/:splat"
+status = 301
+force = true
+
+[/place_convenience/*]
+to = "https://raittoproject.netlify.app/place_convenience/:splat"
+status = 301
+force = true
+
+[/place_book/*]
+to = "https://raittoproject.netlify.app/place_book/:splat"
+status = 301
+force = true
+
+[/place_laundry/*]
+to = "https://raittoproject.netlify.app/place_laundry/:splat"
+status = 301
+force = true
