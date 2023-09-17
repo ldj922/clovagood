@@ -1,4 +1,3 @@
-
 [/save_store/*]
 to = "https://clovagood.netlify.app/save_store/:splat"
 status = 301
