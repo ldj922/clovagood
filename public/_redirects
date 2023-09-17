@@ -1,4 +1,3 @@
-/* /index.html 200
 
 [/save_store/*]
 to = "https://clovagood.netlify.app/save_store/:splat"
@@ -49,3 +48,5 @@ force = true
 to = "https://clovagood.netlify.app/place_laundry/:splat"
 status = 301
 force = true
+
+/* /index.html 200
