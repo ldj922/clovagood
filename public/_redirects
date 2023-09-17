@@ -1,51 +1,12 @@
-[/save_store/*]
-to = "https://clovagood.netlify.app/save_store/:splat"
-status = 301
-force = true
+/api/save_store/*  /save_store/:splat  200
+/api/place_restaurant/*  /place_restaurant/:splat  200
+/api/place_drink_alcohol/*  /place_drink_alcohol/:splat  200
+/api/place_drink_caffeine/*  /place_drink_caffeine/:splat  200
+/api/place_play_game/*  /place_play_game/:splat  200
+/api/place_sing/*  /place_sing/:splat  200
+/api/place_exercise/*  /place_exercise/:splat  200
+/api/place_convenience/*  /place_convenience/:splat  200
+/api/place_book/*  /place_book/:splat  200
+/api/place_laundry/*  /place_laundry/:splat  200
 
-[/place_restaurant/*]
-to = "https://clovagood.netlify.app/place_restaurant/:splat"
-status = 301
-force = true
-
-[/place_drink_alcohol/*]
-to = "https://clovagood.netlify.app/place_drink_alcohol/:splat"
-status = 301
-force = true
-
-[/place_drink_caffeine/*]
-to = "https://clovagood.netlify.app/place_drink_caffeine/:splat"
-status = 301
-force = true
-
-[/place_play_game/*]
-to = "https://clovagood.netlify.app/place_play_game/:splat"
-status = 301
-force = true
-
-[/place_sing/*]
-to = "https://clovagood.netlify.app/place_sing/:splat"
-status = 301
-force = true
-
-[/place_exercise/*]
-to = "https://clovagood.netlify.app/place_exercise/:splat"
-status = 301
-force = true
-
-[/place_convenience/*]
-to = "https://clovagood.netlify.app/place_convenience/:splat"
-status = 301
-force = true
-
-[/place_book/*]
-to = "https://clovagood.netlify.app/place_book/:splat"
-status = 301
-force = true
-
-[/place_laundry/*]
-to = "https://clovagood.netlify.app/place_laundry/:splat"
-status = 301
-force = true
-
-/* /index.html 200
+/*  /index.html  200

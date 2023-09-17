@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.post('/save_store', upload.single('photo_url'), (req, res) => {
+app.post('/api/save_store', upload.single('photo_url'), (req, res) => {
   const storeName = req.body.store_name; 
   const category = req.body.category;
   const phoneNumber = req.body.phone_number;
@@ -68,47 +68,47 @@ app.post('/save_store', upload.single('photo_url'), (req, res) => {
   res.send(successPage);  
 });
 
-app.get('/place_restaurant', (req, res) => {
+app.get('/api/place_restaurant', (req, res) => {
   const restaurants = raittoData.filter(item => item.category === '식당');
   res.json(restaurants);
 });
 
-app.get('/place_drink_alcohol', (req, res) => {
+app.get('/api/place_drink_alcohol', (req, res) => {
   const alcoholPlaces = raittoData.filter(item => item.category === '술집');
   res.json(alcoholPlaces);
 });
 
-app.get('/place_drink_caffeine', (req, res) => {
+app.get('/api/place_drink_caffeine', (req, res) => {
   const cafePlaces = raittoData.filter(item => item.category === '카페');
   res.json(cafePlaces);
 });
 
-app.get('/place_play_game', (req, res) => {
+app.get('/api/place_play_game', (req, res) => {
   const pcPlaces = raittoData.filter(item => item.category === 'PC방');
   res.json(pcPlaces);
 });
 
-app.get('/place_sing', (req, res) => {
+app.get('/api/place_sing', (req, res) => {
   const karaokePlaces = raittoData.filter(item => item.category === '노래방');
   res.json(karaokePlaces);
 });
 
-app.get('/place_exercise', (req, res) => {
+app.get('/api/place_exercise', (req, res) => {
   const exercisePlaces = raittoData.filter(item => item.category === '운동 시설');
   res.json(exercisePlaces);
 });
 
-app.get('/place_convenience', (req, res) => {
+app.get('/api/place_convenience', (req, res) => {
   const convenienceStores = raittoData.filter(item => item.category === '편의점');
   res.json(convenienceStores);
 });
 
-app.get('/place_book', (req, res) => {
+app.get('/api/place_book', (req, res) => {
   const bookStores = raittoData.filter(item => item.category === '책방');
   res.json(bookStores);
 });
 
-app.get('/place_laundry', (req, res) => {
+app.get('/api/place_laundry', (req, res) => {
   const laundries = raittoData.filter(item => item.category === '빨래방');
   res.json(laundries);
 });
