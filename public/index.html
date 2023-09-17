@@ -11,22 +11,18 @@
             padding: 0;
             font-family: Arial, sans-serif;
         }
-
         h1 {
             margin-top: 20px;
         }
-
         form {
             text-align: left;
             margin: 0 auto;
             width: 300px;
         }
-
         label {
             display: block;
             margin-top: 10px;
         }
-
         input[type="text"],
         input[type="tel"],
         textarea,
@@ -36,7 +32,6 @@
             padding: 10px;
             margin-top: 5px;
         }
-
         input[type="submit"] {
             background-color: #007BFF;
             color: white;
@@ -45,50 +40,58 @@
             margin-top: 10px;
             cursor: pointer;
         }
-
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
     </style>
+    <script>
+        async function fetchPlaces(endpoint) {
+            const response = await fetch(`/.netlify/functions/${endpoint}`);
+            const data = await response.json();
+            const listElement = document.getElementById(`${endpoint}-list`);
+            listElement.innerHTML = "";
+            data.forEach(place => {
+                const listItem = document.createElement("li");
+                listItem.textContent = place.name;
+                listElement.appendChild(listItem);
+            });
+        }
+    </script>
 </head>
 <body>
     <h1>정보 입력</h1>
     <form action="/save_store" method="post" enctype="multipart/form-data">
         <label for="store_name">식당 이름:</label>
         <input type="text" id="store_name" name="store_name" required>
-
         <label for="category">카테고리:</label>
         <input type="text" id="category" name="category">
-
         <label for="phone_number">전화번호:</label>
         <input type="tel" id="phone_number" name="phone_number">
-
         <label for="menu">메뉴 정보:</label>
         <textarea id="menu" name="menu"></textarea>
-
         <label for="photo_url">사진 URL 저장:</label>
         <input type="text" id="photo_url" name="photo_url">
-
         <input type="submit" value="퍼킹저장">
     </form>
+    
+    <button onclick="fetchPlaces('place_restaurant')">식당 정보 보기</button>
+    <ul id="place_restaurant-list"></ul>
+    <button onclick="fetchPlaces('place_drink_alcohol')">술집 정보 보기</button>
+    <ul id="place_drink_alcohol-list"></ul>
+    <button onclick="fetchPlaces('place_drink_caffeine')">카페 정보 보기</button>
+    <ul id="place_drink_caffeine-list"></ul>
+    <button onclick="fetchPlaces('place_play_game')">PC방 정보 보기</button>
+    <ul id="place_play_game-list"></ul>
+    <button onclick="fetchPlaces('place_sing')">노래방 정보 보기</button>
+    <ul id="place_sing-list"></ul>
+    <button onclick="fetchPlaces('place_exercise')">운동 시설 정보 보기</button>
+    <ul id="place_exercise-list"></ul>
+    <button onclick="fetchPlaces('place_convenience')">편의점 정보 보기</button>
+    <ul id="place_convenience-list"></ul>
+    <button onclick="fetchPlaces('place_book')">책방 정보 보기</button>
+    <ul id="place_book-list"></ul>
+    <button onclick="fetchPlaces('place_laundry')">빨래방 정보 보기</button>
+    <ul id="place_laundry-list"></ul>
 
-    <!-- 엔드포인트로 이동할 버튼들을 추가합니다. -->
-    <button onclick="navigateToEndpoint('place_restaurant')">식당 정보 보기</button>
-    <button onclick="navigateToEndpoint('place_drink_alcohol')">술집 정보 보기</button>
-    <button onclick="navigateToEndpoint('place_drink_caffeine')">카페 정보 보기</button>
-    <button onclick="navigateToEndpoint('place_play_game')">PC방 정보 보기</button>
-    <button onclick="navigateToEndpoint('place_sing')">노래방 정보 보기</button>
-    <button onclick="navigateToEndpoint('place_exercise')">운동 시설 정보 보기</button>
-    <button onclick="navigateToEndpoint('place_convenience')">편의점 정보 보기</button>
-    <button onclick="navigateToEndpoint('place_book')">책방 정보 보기</button>
-    <button onclick="navigateToEndpoint('place_laundry')">빨래방 정보 보기</button>
-
-    <script>
-        // 엔드포인트로 이동하는 JavaScript 함수를 정의합니다.
-        function navigateToEndpoint(endpoint) {
-            // 각 버튼을 클릭할 때 해당 엔드포인트로 이동합니다.
-            window.location.href = `/api/${endpoint}`;
-        }
-    </script>
 </body>
 </html>
